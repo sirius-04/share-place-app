@@ -1,4 +1,4 @@
-import type { Place } from "../../../types/place";
+import type { Place } from "../../../shared/types/place";
 import Card from "../../../shared/components/ui/Card";
 import PlaceItem from "./PlaceItem";
 

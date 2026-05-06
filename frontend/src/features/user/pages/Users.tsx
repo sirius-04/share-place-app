@@ -1,5 +1,5 @@
 import UsersList from "../components/UsersList";
-import type { User } from "../../../types/user";
+import type { User } from "../../../shared/types/user";
 
 const DUMMY_USERS: User[] = [
     { id: 'u1', name: 'Sirius', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaWsXo5F85kRoO71djabY5zrLTeWKDnR9l7w&s', placesCount: 3 },

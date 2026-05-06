@@ -1,7 +1,7 @@
-import type { Place } from "../../../types/place";
+import type { Place } from "../../../shared/types/place";
 import Card from "../../../shared/components/ui/Card";
-import Modal from "@/shared/components/ui/Modal";
-import { Link } from "react-router-dom";
+import ViewPlaceModal from "./modal/ViewPlaceModal";
+import EditPlaceModal from "./modal/EditPlaceModal";
 
 type PlaceItemProps = {
   place: Place,
@@ -23,22 +23,24 @@ export default function PlaceItem({ place }: PlaceItemProps) {
           </div>
 
           <div className="p-[1rem] text-center border-t border-gray-400">
-            
-            <Modal
-              title="View Place"
-              description="testinng 123"
+            <ViewPlaceModal
               Trigger={
                 <button className="mx-2 px-4 py-1.5 text-xs font-medium tracking-widest text-slate-500 rounded hover:text-slate-800 hover:bg-slate-100 transition-colors duration-150">
                   VIEW ON MAP
-                </button>             
+                </button>
               }
-            >
-              <p>Hello</p>
-            </Modal>
+              place={place}
+            />
 
-            <Link className="mx-2 px-4 py-1.5 text-xs font-medium tracking-widest text-slate-500 rounded hover:text-slate-800 hover:bg-slate-100 transition-colors duration-150" to={`/places/${place.id}`}>
-              EDIT
-            </Link>
+            <EditPlaceModal
+              Trigger={
+                <button className="mx-2 px-4 py-1.5 text-xs font-medium tracking-widest text-slate-500 rounded hover:text-slate-800 hover:bg-slate-100 transition-colors duration-150">
+                  EDIT
+                </button>
+              }
+              place={place}
+            />
+
             <button className="mx-2 px-4 py-1.5 text-xs font-medium tracking-widest text-slate-500 rounded hover:text-red-600 hover:bg-red-50 transition-colors duration-150">
               DELETE
             </button>
