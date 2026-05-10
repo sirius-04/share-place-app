@@ -1,6 +1,6 @@
 import Modal from "./Modal";
 
-type InfoModalProps = {
+interface InfoModalProps {
   title: string,
   description?: string,
   children: React.ReactNode,

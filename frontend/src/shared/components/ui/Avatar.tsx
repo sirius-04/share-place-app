@@ -1,4 +1,4 @@
-type AvatarProps = {
+interface AvatarProps {
   image: string,
   alt: string,
 };

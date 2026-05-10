@@ -3,7 +3,7 @@ import Card from "../../../shared/components/ui/Card";
 import ViewPlaceModal from "./modal/ViewPlaceModal";
 import EditPlaceModal from "./modal/EditPlaceModal";
 
-type PlaceItemProps = {
+interface PlaceItemProps {
   place: Place,
 };
 

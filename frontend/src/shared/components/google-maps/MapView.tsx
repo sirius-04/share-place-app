@@ -1,6 +1,6 @@
 import { Map, Marker } from "@vis.gl/react-google-maps"
 
-type MapViewProps = {
+interface MapViewProps {
   style?: React.CSSProperties,
   coordinates: {
     lat: number,

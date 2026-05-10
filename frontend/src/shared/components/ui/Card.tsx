@@ -1,4 +1,4 @@
-type CardProps = {
+interface CardProps {
   children: React.ReactNode,
   className?: string,
 };

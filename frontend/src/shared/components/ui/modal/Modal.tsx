@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import type { ModalFooterAction, ModalSize } from "./modal.types";
 
-type ModalProps = {
+interface ModalProps {
   title: string,
   description?: string,
   children?: React.ReactNode,
@@ -47,34 +47,32 @@ export default function Modal({
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger render={Trigger} />
       <DialogContent className={`${sizeMap[size]}`}>
-        <form>
-          <DialogHeader>
-            <DialogTitle>{title}</DialogTitle>
-            {description && (
-              <DialogDescription>
-                {description}
-              </DialogDescription>
-            )}
-          </DialogHeader>
+        <DialogHeader>
+          <DialogTitle>{title}</DialogTitle>
+          {description && (
+            <DialogDescription>
+              {description}
+            </DialogDescription>
+          )}
+        </DialogHeader>
 
-          {children}
+        {children}
 
-          {actions && (
-            <DialogFooter>
-              <DialogClose render={<Button variant="outline">Cancel</Button>} />
-              {actions.map(action => (
-                <Button
-                  key={action.label}
-                  onClick={() => handleAction(action.onClick)}
-                  disabled={action.disabled}
-                  variant={action.variant ?? "default"}
-                >
-                  {action.label}
-                </Button>              
-              ))}
-            </DialogFooter>
-          )}          
-        </form>
+        {actions && (
+          <DialogFooter>
+            <DialogClose render={<Button variant="outline">Cancel</Button>} />
+            {actions.map(action => (
+              <Button
+                key={action.label}
+                onClick={() => handleAction(action.onClick)}
+                disabled={action.disabled}
+                variant={action.variant ?? "default"}
+              >
+                {action.label}
+              </Button>              
+            ))}
+          </DialogFooter>
+        )}
       </DialogContent>
     </Dialog>
   );

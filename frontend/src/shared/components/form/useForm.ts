@@ -1,5 +1,6 @@
 import { useReducer } from "react";
 import type { FormState, FormAction, InputChangePayload, FormValues } from "./form.types";
+import { validate } from "@/shared/components/form/validators/validators";
 
 function formIsValid(values: FormValues) {
   return (
@@ -23,7 +24,7 @@ function formReducer(state: FormState, action: FormAction) {
         ...state.values,
         [action.payload.inputId]: {
           value: action.payload.value,
-          isValid: action.payload.isValid,
+          isValid: validate(action.payload.value, action.payload.validators),
         },
       };
 
