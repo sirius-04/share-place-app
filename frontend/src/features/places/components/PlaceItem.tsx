@@ -2,8 +2,9 @@ import type { Place } from "../../../shared/types/place";
 import Card from "../../../shared/components/ui/Card";
 import ViewPlaceModal from "./modal/ViewPlaceModal";
 import EditPlaceModal from "./modal/EditPlaceModal";
+import ConfirmationModal from "@/shared/components/ui/modal/ConfirmationModal";
 
-type PlaceItemProps = {
+interface PlaceItemProps {
   place: Place,
 };
 
@@ -41,9 +42,17 @@ export default function PlaceItem({ place }: PlaceItemProps) {
               place={place}
             />
 
-            <button className="mx-2 px-4 py-1.5 text-xs font-medium tracking-widest text-slate-500 rounded hover:text-red-600 hover:bg-red-50 transition-colors duration-150">
-              DELETE
-            </button>
+            <ConfirmationModal
+              title={`Delete ${place.title}`}
+              description="Are you sure you want to delete this place? This action can't be undone."
+              Trigger={
+                <button className="mx-2 px-4 py-1.5 text-xs font-medium tracking-widest text-slate-500 rounded hover:text-red-600 hover:bg-red-50 transition-colors duration-150">
+                  DELETE
+                </button>                
+              }
+              onConfirm={() => {console.log('delete ', place.title)}}
+            />
+
           </div>
         </Card>
       </li>

@@ -1,6 +1,6 @@
 import { APIProvider } from "@vis.gl/react-google-maps";
 
-type MapProviderProps = {
+interface MapProviderProps {
   children: React.ReactNode,
 }
 

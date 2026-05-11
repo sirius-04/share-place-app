@@ -1,4 +1,4 @@
-import type { InputValue } from "../Input.types";
+import type { InputValue } from "@/shared/components/form/form.types";
 import type { EmailValidator, FileValidator, LengthValidator, NumberValidator, RequireValidator, Validator } from "./validators.types";
 
 const VALIDATOR_TYPE_REQUIRE = 'REQUIRE';

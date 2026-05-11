@@ -1,4 +1,4 @@
-type MainHeaderProps = {
+interface MainHeaderProps {
   children: React.ReactNode,
 }
 

@@ -2,7 +2,7 @@ import InfoModal from "@/shared/components/ui/modal/InfoModal";
 import MapView from "@/shared/components/google-maps/MapView";
 import type { Place } from "@/shared/types/place";
 
-type ViewPlaceModalProps = {
+interface ViewPlaceModalProps {
   Trigger: React.ReactElement,
   title?: string,
   description?: string,

@@ -2,7 +2,7 @@ import type { Place } from "../../../shared/types/place";
 import Card from "../../../shared/components/ui/Card";
 import PlaceItem from "./PlaceItem";
 
-type PlaceListProps = {
+interface PlaceListProps {
   places: Place[],
 };
 

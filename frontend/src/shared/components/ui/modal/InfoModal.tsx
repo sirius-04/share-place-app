@@ -1,16 +1,13 @@
 import Modal from "./Modal";
+import type { BaseModalProps } from "./modal.types";
 
-type InfoModalProps = {
-  title: string,
-  description?: string,
-  children: React.ReactNode,
-  Trigger: React.ReactElement,
-};
+type InfoModalProps = BaseModalProps;
 
 export default function InfoModal({
   title,
   description,
   children,
+  size = "lg",
   Trigger,
 }: InfoModalProps) {
   return (
@@ -18,6 +15,7 @@ export default function InfoModal({
       title={title}
       description={description}
       Trigger={Trigger}
+      size={size}
     >
       {children}
     </Modal>
