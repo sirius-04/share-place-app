@@ -1,15 +1,10 @@
 import Modal from "../ui/modal/Modal";
 import Form from "./Form/Form";
-import type { ModalSize } from "../ui/modal/modal.types";
+import type { BaseModalProps } from "../ui/modal/modal.types";
 import type { FormValues } from "./form.types";
 import { useRef, useState } from "react";
 
-type FormModalProps = {
-  title: string;
-  description?: string;
-  children: React.ReactNode;
-  size?: ModalSize;
-  Trigger: React.ReactElement;
+interface FormModalProps extends BaseModalProps {
   initialValues: FormValues;
   onSubmit: (values: FormValues) => void;
 };

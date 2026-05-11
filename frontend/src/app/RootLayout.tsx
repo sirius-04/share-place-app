@@ -6,9 +6,8 @@ export default function RootLayout() {
     <>
       <MainNavigation />
       <main className="my-[5rem] mx-5">
-        <Outlet />         
+        <Outlet />
       </main>
-
     </>
   );
 }
